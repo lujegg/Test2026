@@ -1,1 +1,1 @@
-This is a Test for EECE2140
+# EECE2140 - Spring 2026
