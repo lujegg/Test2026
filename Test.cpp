@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
-
-double area(double width, double height)
-{
-    return width * height;
+//=======
+void printArray(const int arr[], int size) {
+  for (int i = 0; i < size; i++) {
+    cout << arr[i] << " "<<endl;
+  }
 }
-
-int main()
-{
-    double w, h;
-    cout << "Enter width: ";
-    cin >> w;
-    cout << "Enter height: ";
-    cin >> h;
-    
-    cout << "Area = " << area(w, h) << endl;
-    return 0;
+//=======
+int main() {
+  const int size = 10;
+  int arr[size];
+  cout<< "Enter" << size << " integers: " <<endl;
+  for (int i = 0; i < size; i++) {
+    cin >> arr[i];
+  }
+  printArray(arr, size);
+  return 0;
 }
