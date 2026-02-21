@@ -23,6 +23,7 @@ if (!inputfile) {
 }
 
 inputfile >> rows >> cols;
+//test to see if file is loaded correctly
 cout << "SUCCESS: Loading " << rows << " rows and " << cols << " columns." << endl;
 vector<vector<int>> image(rows, vector<int>(cols));
 for (int x = 0; x < rows; x++) {    
