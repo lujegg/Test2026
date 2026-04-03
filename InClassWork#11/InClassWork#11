@@ -42,10 +42,61 @@ public:
         cout << "null" << endl;
     }
 
-    // TODO: Implement destructor, copy constructor, operator=
-    // (Part A deliverable)
-
     ~NodeList() {
-        // Your code: free all nodes
+    ListNode* current = head;
+    while (current != nullptr) {
+        ListNode* next = current->next;
+        delete current;
+        current = next;
     }
+    head = nullptr; 
+}
+
+    NodeList(const NodeList& other) : head(nullptr), count(0) {
+    if (other.head == nullptr) return;
+
+    ListNode* otherCurr = other.head;
+    ListNode* thisLast = nullptr;
+
+    while (otherCurr != nullptr) {
+        ListNode* newNode = new ListNode{otherCurr->id, otherCurr->name, nullptr};
+        
+        if (head == nullptr) {
+            head = newNode; 
+        } else {
+            thisLast->next = newNode; 
+        }
+        
+        thisLast = newNode;
+        otherCurr = otherCurr->next;
+        count++;
+    }
+}
+    NodeList& operator=(const NodeList& other) {
+    if (this == &other) return *this;
+
+    ListNode* current = head;
+    while (current != nullptr) {
+        ListNode* next = current->next;
+        delete current;
+        current = next;
+    }
+    head = nullptr;
+    count = 0;
+
+    ListNode* otherCurr = other.head;
+    ListNode* thisLast = nullptr;
+
+    while (otherCurr != nullptr) {
+        ListNode* newNode = new ListNode{otherCurr->id, otherCurr->name, nullptr};
+        if (head == nullptr) head = newNode;
+        else thisLast->next = newNode;
+        
+        thisLast = newNode;
+        otherCurr = otherCurr->next;
+        count++;
+    }
+
+    return *this;
+}
 };
