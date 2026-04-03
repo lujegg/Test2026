@@ -1,0 +1,151 @@
+//===== Problem 1.a
+#include <iostream>
+using namespace std;
+int main()
+{
+    double x = 9.2;
+    cout << x*x*x*x<<endl;
+    return 0;
+}
+//===== Problem 1.b
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double x;
+    double y;
+    cout<<"Enter x: ";
+    cin>>x;
+    cout<<endl;
+    cout<<"Enter y: ";
+    cin>>y;
+    cout << sqrt(5*x-3*x*y)<<endl;
+    return 0;
+}
+//===== Problem 1.c
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double a;
+    double b;
+    cout<<"Enter a: ";
+    cin>>a;
+    cout<<endl;
+    cout<<"Enter b: ";
+    cin>>b;
+    cout << cbrt(a+b)<<endl;
+    return 0;
+}
+//===== Problem 1.d
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double a;
+    double b;
+    double c;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    if (pow(b,2) - 4*a*c > 0) {
+    cout<<(-b + sqrt((pow(b,2) - 4*a*c)))/(2*a)<< endl;
+    cout<<(-b - sqrt((pow(b,2) - 4*a*c)))/(2*a)<< endl;
+    }
+    else {
+        cout<<"imaginary numbers"<<endl;
+    }
+}
+//===== Problem 1.e
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double x;
+    double y;
+    cout<<"Enter x: ";
+    cin>>x;
+    cout<<endl;
+    cout<<"Enter y: ";
+    cin>>y;
+    cout << abs(3*x*x - 2*y)<<endl;
+    return 0;
+}
+//===== Problem 2
+#include <iostream>
+#include <cmath>
+using namespace std;
+//===========function definition
+    bool comparison(double x,double y,double z) {
+    return (floor(x*y) == floor(z));
+    }
+//===========check
+int main()
+{
+    double x;
+    double y;
+    double z;
+    cout<<"Enter first number: ";
+    cin>>x;
+    cout<<"Enter second number: ";
+    cin>>y;
+    cout<<"Enter third number: ";
+    cin>>z;
+    cout<<comparison(x,y,z)<<endl;
+}    
+//===== Problem 3
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int temp = 0;
+    
+    for (int counter = 1; counter <= 100; counter++)
+        if (pow(floor(sqrt(counter / 1.0)), 2.0) == counter)
+            temp = temp + counter;
+
+    cout << temp << endl;
+
+    return 0;
+}    
+//======problem 4
+#include <iostream>
+
+using namespace std;
+
+int mystery(int x, int y, int z);
+
+int main()
+{
+  cout << mystery(4, 18, 12) << endl;
+  cout << mystery(6, -3, 45) << endl;
+  cout << mystery(-5, 12, 7) << endl;
+  cout << mystery(1, 0, 0) << endl;
+  cout << mystery(10, 10, 10) << endl;
+
+  return 0;
+}
+//======problem 5
+#include <iostream>
+#include <cmath>
+using namespace std;
+//===========function definition
+    double addition(double x,double y) {
+    return (pow(x,y)+pow(y,x));
+    }
+//===========check
+int main()
+{
+    double x;
+    double y;
+    cout<<"Enter first number: ";
+    cin>>x;
+    cout<<"Enter second number: ";
+    cin>>y;
+    cout<<addition(x,y)<<endl;
+}    

@@ -1,0 +1,71 @@
+//======== problem 1
+#include <iostream>
+using namespace std;
+int main() {
+    int scores[5];
+    scores[2]=90;
+    return 0;
+}
+//======== problem 2
+#include <iostream>
+using namespace std;
+int main() {
+    int nums[4] = {2, 4, 6, 8};
+    for (int i = 0; i < 4; i++) {
+        cout << nums[i] << endl;
+    }
+}
+
+//======== problem 3
+#include <iostream>
+using namespace std;
+int main() {
+    int y = 0;
+    int values[6] = {3, 5, 1, 4, 2, 7};
+    for (int i = 0; i < 6; i++) {
+        y = y + values[i];
+    }
+    cout << y << endl;
+}
+
+//======== problem 5
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[] = {7, 2, 9, 4, 1};
+    int min = arr[0];
+    int max = arr[0];
+    for (int n =0;n< 5; n++) {
+        if (arr[n]<min) {
+            min = arr[n];
+        }
+        if (arr[n]>max) {
+            max = arr[n];
+        }
+        }
+        cout<<"Min = "<<min<<endl;
+        cout<<"Max = "<<max<<endl;
+        return 0;
+}
+
+//======== problem 6 
+
+#include <iostream>
+using namespace std;
+int main() {
+    int a=0;
+    int first=0;
+    int last=4;
+    int arr[] = {1, 3, 5, 7, 9};
+    while (first <= last) {
+        int a = arr[first];
+        arr[first] = arr[last];
+        arr[last] = a;
+        first = first + 1;
+        last = last - 1;
+    }
+    a = 0;
+    for (a; a < 5; a++) {
+        cout<<arr[a]<<" ";
+    }
+}

@@ -1,0 +1,32 @@
+Q3. The old content got deleted for the new content because
+its a natural property of writing data; it overrides anything in it.
+Q5. By default, append adds to thhe end of the file, and this 
+is shown when we keep appending, and it keeps adding writing after
+the whole of the message. However, we can not use ios::app and instead use 
+stringstream and a buffer to hold the information from our data before adding 
+the new message in, and then reinserting the data. Stringstream as a initializer
+is used to hold the files contents in its entirety and can then allow
+buffer to hold all the data.
+Q6. The edge case of empty string simply causes the file to be created,
+but nothing to be inputted so it doesn't print anything. To be safe, I added
+a edge case that warns the user that nothing is inputted without creating the 
+file. The invalid file name is dealt with by checking that the file is opened
+after creating it using FileExists, and it displays an error if there was a problem with 
+creating it that is caused probably by the file name. The very large string
+isn't likely to be an issue due to the write being able to accept that, and 
+for it to need changes requires extreme amounts of words to where it'd 
+likely be a problem of ram rather than the code. The multiple times in a loop
+will simply override itself each time so it'll just be the end message, and that
+doesn't require any changes.
+Q8.
+1.The difference between ios::out and ios::app is that ios::out deletes all content
+in the file before inserting the new message. ios::app keeps the data, but adds 
+the new data in the end of the file after the already written data.
+2. We use classes to keep data protected and not able to be altered from within
+main, as well as keeping our functions organized and modular.
+3. The advantages to encapsulation are that it makes editing much simpler as you
+don't have to go back and forth for the code, and instead everything is in one 
+place, and it also makes it easier for others to understand your code and how
+each part is used.
+4. If you forget to close a file, the data you write won't actually be written onto
+the file, and instead just held there waiting for more inputs.

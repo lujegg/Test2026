@@ -1,0 +1,189 @@
+//======problem 1
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    for (int x=1;x<11;x++){
+        cout<<x<<endl;
+    }
+    return 0;
+}
+//======problem 2
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    for (int x=10;x>0;x--){
+        cout<<x<<endl;
+    }
+return 0;
+}
+//======problem 3
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 2;
+    do {
+        cout<<x<<endl;
+        x = x+2;
+    }
+    while (x<22);
+    return 0;
+}
+//======problem 4
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 5;
+    do {
+        cout<<x<<endl;
+        x = x-1;
+    }
+    while (x>0);
+    return 0;
+}
+//======problem 5
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 4;
+    int y = 0;
+    while (x != 0) {
+        cout<<"Enter a number:"<<endl;
+        cin>>x;
+        y = y + x;
+        if (x != 0) {
+            cout<<"Your number: "<<x<<endl;
+        }
+    }
+    cout<<"The sum: "<<y<<endl;
+    return 0;
+}
+//======problem 6
+#include <iostream>
+using namespace std;
+int main() {
+    int i =0;
+    while (i<60) {
+        i+=3;
+        cout<<i<<endl;
+    }
+}
+//======problem 7
+#include <iostream>
+using namespace std;
+int main() {
+    for (int x=0; x<5;x++) {
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+//======problem 8
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 19;
+    do {
+        cout<<x<<" ";
+        x = x-2;
+    }
+    while (x>0);
+    cout<<endl;
+}
+//======problem 9
+#include <iostream>
+using namespace std;
+int main() {
+int x;
+int n = 0;
+cin>>x;
+while (x > 0) {
+    n = x%10;
+    cout<<n;
+    x = x/10;
+}
+cout<<endl;
+}
+//======problem 10
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 1;
+    while (n<100) {
+        cout<<n<<" ";
+        n = n*2;
+    }
+    cout<<endl;
+}
+//======bug 1
+int i = 1;
+
+while (i <= 10) {
+    cout << i << endl;
+    i++;
+}
+//======bug 2
+int i = 10;
+
+while (i > 1) {
+    cout << i << " ";
+    i--;
+}
+//======bug 3
+int i = 1;
+
+while (i <= 5) {
+    cout << i << " ";
+    i++;
+}
+//======bug 4
+int i = 0;
+
+do {
+    cout << i << " ";
+    i++;
+} while (i <= 4);
+//======bug 5
+int i = 15;
+
+while (i > 10) {
+    cout << i << endl;
+    i--;
+}
+//======bug 6
+int i = 0;
+
+while (i < 10) {
+    cout << i << " ";
+    i++;
+}
+//======bug 7
+int i = 1;
+
+do {
+    cout << i << " ";
+    i++;
+} while (i <= 10);
+//======bug 8
+int x = 1;
+int sum = 0;
+
+while (x != 0) {
+    cin >> x;
+    sum += x;
+}
+cout<<sum<<endl;
+//======bug 9
+int i = 5;
+
+while (i >= 0) {
+    cout << i << " ";
+    --i;
+}
+//======bug 10
+int i = 0;
+
+while (i < 5) {
+    cout << i << endl;
+    i++;
+}
