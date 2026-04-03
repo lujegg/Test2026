@@ -52,26 +52,3 @@ public:
         cout << "null" << endl;
     }
 };
-
-int main() {
-    SmartNodeList list;
-    list.addNode(1, "Firewall");
-    list.addNode(2, "Switch");
-    list.addNode(3, "Router");
-
-    cout << "Initial:       "; list.display();
-
-    list.removeNode(2);
-    cout << "Remove mid(2): "; list.display();
-
-    list.removeNode(3);
-    cout << "Remove head(3):"; list.display();
-
-    list.removeNode(1);
-    cout << "Remove tail(1):"; list.display();
-
-    list.removeNode(99);
-    cout << "Remove missing:"; list.display();
-
-    return 0;
-}
