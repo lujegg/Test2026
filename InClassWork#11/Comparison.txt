@@ -1,0 +1,5 @@
+Manual NodeList required far more lines of code, approximately 100 lines, whereas smart pointer only required 50, around half the amount. Additionally, we did not need
+to utilize the rule of threes whenn dealing with smart pointer, whereas Manual Nodelist required all 3 just to prevent corrupting memory.
+Additionally, when testing in Part C, these bugs are only possible on Manual NodeList, and would not have been possible when using smart pointers as it does not
+utilize destructors, copy constructors, or assignment operators. Overall, smart pointer is less complex on the programmer, and needs to be manually programmed
+in, whereas smart pointer does it automatically.
