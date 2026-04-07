@@ -1,0 +1,35 @@
+- Why does RoutingEngine use unique_ptr<Node>? (sole ownership)
+RoutingEngine uses unique_ptr because each node is owned only by 
+RoutingEngine, so it is responsible for creating, using, and then
+cleaning it up. By using unique_ptr instead of manual, it bypasses
+the problems discussed in the previous in class work, and eliminates 
+the need for a destructor, and makes it impossible to have a memory leak
+from the destructor or double delete a node.
+- Why are edges stored by value in vector<Edge>? (small, copyable)
+Edges are stored by value because they only contain one int and one double,
+making them resource cheap to copy. Heap-allocating each Edge with new or wrapping it in a smart
+pointer would add per-object overhead (typically 16–32 bytes of allocator metadata) 
+and scatter the data across memory, with no benefit in return.
+- Why is visited on the stack? (short-lived, small)
+Visited vector is on the stack because it is created at the beginning of
+findPath, used once, and then tossed out. Because of this, we don't need to 
+allocate permanent space for it, so we can just put it on the stack rather 
+than heap.
+- Where would shared_ptr be useful? (shared adjacency, multi-path search)
+Shared_ptr is useful when we have multiple owners assigned to one pointer,
+and so by having a shared pointer we can prevent accidentally deleting the 
+pointer itself by running it through the shared pointer first, which counts
+how many owners there are and then deletes the pointer once the count 
+reaches 0.
+- What would break if you used raw new without cleanup?
+If nodes are not properly cleaned up after being used, it would cause
+memory leaks when RoutingEngine is destroyed because there aren't matching 
+deletes. This causes memory leaks that could build up on larger projects.
+
+- Additional:
+The expected output is not accurate to what it should actually be outputting
+when using the given main file. The expected output shows findPath(0, 5, 100) 
+succeeding, but no path like that exists as the only two options from 0 are 100
+and 50, and the 50 bandwidth is too low so we go to node 1. However, at node 1,
+the largest bandwidth to other nodes is 80, which is lower than the minimum
+threshold, so this is wrong. 
